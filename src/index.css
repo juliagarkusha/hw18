@@ -1,0 +1,201 @@
+:root {
+    --inputHeight: 40px;
+    --gray-400: #818181;
+    --gray-300: #D8D8D8;
+    --gray-200: #DFDFDF;
+    --gray-150: #F9F9F9;
+    --gray-100: #F8F8F8;
+    --gray-50: #EBEFF2;
+    --danger-600: #F26464;
+    --danger-500: #F26464;
+    --danger-400: #FFEEEE;
+    --danger-300: #FFDBDB;
+    --success-500: #DDFCC5;
+    --success-600: #52C41A;
+    --black-500: #121212;
+    --white: #ffffff;
+    --blue-600: #1292DF;
+    --blue-500: #109CF1;
+    --blue-300: #1AA7FD;
+    --yellow-100: #FCF3C5;
+    --green-100: #DDFCC5;
+    --green-200: #47AB16;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+html {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    padding: 2rem;
+    background-color: var(--gray-150);
+}
+
+.btn {
+    width: 100%;
+    height: 30px;
+    border-radius: .25rem;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 1rem;
+    opacity: 1;
+    transition: background-color .2s ease-out, border-color .2s ease-out, opacity .2s ease-out;
+}
+
+.btn__container {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 14px;
+    grid-template-columns: repeat(2, 115px);
+    justify-self: flex-start;
+}
+
+@media screen and (max-width: 999px) {
+    .btn__container {
+        grid-template-columns: repeat(2, 70px);
+    }
+}
+
+.btn-primary {
+    background-color: var(--blue-500);
+    border-color: var(--blue-500);
+    color: var(--white);
+}
+
+.btn-danger {
+    background-color: var(--danger-400);
+    border: 1px solid var(--danger-600);
+    color: var(--danger-600);
+}
+
+.btn-danger:hover {
+    background-color: var(--danger-300);
+}
+
+.btn-danger:active {
+    background-color: var(--danger-300);
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: var(--blue-300);
+    border-color: var(--blue-300);
+}
+
+.btn-primary:active {
+    background-color: var(--blue-600);
+    border-color: var(--blue-600);
+}
+
+.btn-primary:disabled {
+    background-color: var(--blue-600);
+    border-color: var(--blue-600);
+    opacity: .54;
+}
+
+.form__control {
+    border-color: var(--gray-200);
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    border-width: 1px;
+    border-style: solid;
+    outline: none;
+    color: var(--black-500);
+    transition: border-color .2s ease-out;
+}
+
+.form__control::placeholder {
+    color: var(--gray-400);
+}
+
+.form__control:focus {
+    border-color: var(--blue-500);
+}
+
+.contacts__list {
+    border-radius: 4px;
+    height: 80vh;
+    overflow: auto;
+}
+
+.contacts__item {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    grid-template-columns: 50px repeat(3, minmax(150px, 1fr)) 247px;
+    padding: 8px 16px;
+    background-color: var(--white);
+    transition: background-color .2s ease-out;
+}
+
+@media screen and (max-width: 999px) {
+    .contacts__item {
+        grid-template-columns: repeat(3, minmax(100px, 1fr)) 155px;
+    }
+}
+
+.contacts__item:not(:last-child) {
+    border-bottom: 1px solid var(--gray-50);
+}
+
+.contacts__item:not(.contact__header):hover {
+    cursor: pointer;
+    background-color: var(--gray-100);
+}
+
+
+.contact__header {
+    font-weight: bold;
+}
+
+.contact__btn {
+    max-width: 140px;
+}
+
+.form {
+    position: absolute;
+    bottom: 3rem;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: flex-end;
+    gap: 14px;
+    grid-template-columns: repeat(3, 1fr) 170px;
+    width: calc(100% - 4rem);
+}
+
+.form__control,
+.form button {
+    height: 50px;
+}
+
+.form__control {
+    padding: 8px 16px;
+}
+
+.form__label {
+    padding-bottom: 4px;
+}
+
+.form__field {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__error {
+    position: absolute;
+    bottom: -24px;
+}
